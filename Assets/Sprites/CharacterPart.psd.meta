@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 745fbdcbba1804c0e98a1524f40e0296
+guid: df4e6fd97d2ba456f8a776dcfa72c0fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9095717837082945937
-    second: Capsule
+      213: -5738429146118954051
+    second: Head
+  - first:
+      213: 8874959917566367095
+    second: Body
+  - first:
+      213: 8669971704898408582
+    second: Hand
+  - first:
+      213: -327346676487685050
+    second: Feet
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -36,8 +45,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -49,12 +58,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -103,7 +112,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -118,63 +127,102 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Capsule
+      name: Head
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 512
+        x: 11
+        y: 305
+        width: 197
+        height: 197
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -33, y: 256}
-        - {x: -95, y: 223}
-        - {x: -128, y: 161}
-        - {x: -128, y: -161}
-        - {x: -95, y: -223}
-        - {x: -33, y: -256}
-        - {x: 33, y: -256}
-        - {x: 95, y: -223}
-        - {x: 128, y: -161}
-        - {x: 128, y: 161}
-        - {x: 95, y: 223}
-        - {x: 33, y: 256}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f669c7f71d485c180800000000000000
-      internalID: -9095717837082945937
+      spriteID: db3e4d858110d50b0800000000000000
+      internalID: -5738429146118954051
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -33, y: 256}
-      - {x: -95, y: 223}
-      - {x: -128, y: 161}
-      - {x: -128, y: -161}
-      - {x: -95, y: -223}
-      - {x: -33, y: -256}
-      - {x: 33, y: -256}
-      - {x: 95, y: -223}
-      - {x: 128, y: -161}
-      - {x: 128, y: 161}
-      - {x: 95, y: 223}
-      - {x: 33, y: 256}
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 152
+        width: 216
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7759f5206013a2b70800000000000000
+      internalID: 8874959917566367095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hand
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 39
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6805823845de15870800000000000000
+      internalID: 8669971704898408582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feet
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 28
+        width: 123
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cfb8d9ee7057bf0800000000000000
+      internalID: -327346676487685050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag:
+  spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
