@@ -15,6 +15,11 @@ public class GroundChecker : MonoBehaviour
     
     public bool isGrounded()
     {
-        return (bool)Physics2D.BoxCast(transform.position, box.size, 0f, Vector2.down, 0.1f, platform_Layer);
+        return (bool)Physics2D.BoxCast(transform.position + (Vector3)box.offset, box.size, 0f, Vector2.down, 0.1f, platform_Layer);
+    }
+
+    public Transform currentGround()
+    {
+        return Physics2D.BoxCast(transform.position + (Vector3)box.offset, box.size, 0f, Vector2.down, 0.1f, platform_Layer).transform;
     }
 }

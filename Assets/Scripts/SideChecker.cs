@@ -28,6 +28,6 @@ public class SideChecker : MonoBehaviour
     
     private void cancel_Collision()
     {
-        rb.GetComponent<BoxCollider2D>().enabled = !(bool)Physics2D.BoxCast(transform.position, box.size, 0f, Vector2.zero, 0f, platform_Layer);
+        rb.GetComponent<BoxCollider2D>().enabled = !(bool)Physics2D.BoxCast(transform.position + (Vector3)box.offset, box.size, 0f, Vector2.zero, 0f, platform_Layer);
     }
 }
