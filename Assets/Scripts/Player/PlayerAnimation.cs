@@ -12,14 +12,16 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        set_Speed();
+        move();
         fall();
         idle();
     }
 
-    private void set_Speed()
+    private void move()
     {
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        bool isFiring = transform.parent.Find("Gun Slot").GetChild(0).GetComponent<Gun>().get_firing();
+        bool isMoving = transform.parent.GetComponent<PlayerMovement>().isMoving;
+        animator.SetBool("Move", (!isFiring && (Mathf.Abs(rb.velocity.x) > 0)) || (isFiring && isMoving));
     }
 
     public void jump()

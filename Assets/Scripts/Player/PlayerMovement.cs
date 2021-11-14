@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0f, 40f)] private float jumpSpeed;
     [SerializeField, Range(0f, 20f)] private float fallSpeed;
     private int extraJump;
+    public bool isMoving;
     public bool goingDown = false;
 
 
@@ -30,34 +31,45 @@ public class PlayerMovement : MonoBehaviour
 
     private void horizontalMove()
     {
+        float weight = transform.Find("Gun Slot").GetChild(0).GetComponent<Gun>().get_weight();
         // accelerates the player towards left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            isMoving = true;
             transform.rotation = Quaternion.Euler(0, 0, 0);
             // limits the horizontal speed
-            if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+            if (Mathf.Abs(rb.velocity.x) < maxSpeed - weight)
             {
-                rb.velocity += Vector2.left * (3f * moveSpeed) * Time.deltaTime;
-                if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+                rb.velocity += Vector2.left * (3f * (moveSpeed)) * Time.deltaTime;
+                if (Mathf.Abs(rb.velocity.x) > maxSpeed - weight)
                 {
-                    rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+                    rb.velocity = new Vector2(-(maxSpeed - weight), rb.velocity.y);
                 }
             }
         }
+
         // accelerates the player towards right
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            isMoving = true;
             transform.rotation = Quaternion.Euler(0, 180, 0);
             // limits the horizontal speed
-            if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+            if (Mathf.Abs(rb.velocity.x) < maxSpeed - weight)
             {
                 rb.velocity += Vector2.right * (3f * moveSpeed) * Time.deltaTime;
-                if (Mathf.Abs(rb.velocity.x) > maxSpeed)
+                if (Mathf.Abs(rb.velocity.x) > maxSpeed - weight)
                 {
-                    rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+                    rb.velocity = new Vector2(maxSpeed - weight, rb.velocity.y);
                 }
             }
         }
+
+        // animation detection
+        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        {
+            isMoving = false;
+        }
+
         // horizontal drag
         if (rb.velocity.x > 0f)
         {
