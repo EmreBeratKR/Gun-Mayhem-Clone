@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void horizontalMove()
     {
-        float weight = transform.Find("Gun Slot").GetChild(0).GetComponent<Gun>().get_weight();
+        float weight = transform.Find("Sprites").Find("Hand").GetChild(0).GetComponent<Gun>().get_weight();
         // accelerates the player towards left
         if (Input.GetKey(KeyCode.LeftArrow))
         {

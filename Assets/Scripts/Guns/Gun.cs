@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
             isFiring = true;
             if (Time.time - last_shot >= (1f / fire_rate))
             {
-                Transform player = transform.parent.parent;
+                Transform player = transform.parent.parent.parent;
                 // fires a bullet
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, player.rotation);
                 bullet.GetComponent<Bullet>().set_bullet(knockback);

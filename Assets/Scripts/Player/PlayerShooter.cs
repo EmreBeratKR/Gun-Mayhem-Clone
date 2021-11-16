@@ -8,12 +8,12 @@ public class PlayerShooter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z))
         {
-            Gun gun = transform.Find("Gun Slot").GetChild(0).GetComponent<Gun>();
+            Gun gun = transform.GetChild(0).GetComponent<Gun>();
             gun.fire();
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
-            Gun gun = transform.Find("Gun Slot").GetChild(0).GetComponent<Gun>();
+            Gun gun = transform.GetChild(0).GetComponent<Gun>();
             gun.set_firing(false);
         }
     }

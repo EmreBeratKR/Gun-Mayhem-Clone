@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void move()
     {
-        bool isFiring = transform.parent.Find("Gun Slot").GetChild(0).GetComponent<Gun>().get_firing();
+        bool isFiring = transform.Find("Hand").GetChild(0).GetComponent<Gun>().get_firing();
         bool isMoving = transform.parent.GetComponent<PlayerMovement>().isMoving;
         animator.SetBool("Move", (!isFiring && (Mathf.Abs(rb.velocity.x) > 0)) || (isFiring && isMoving));
     }
